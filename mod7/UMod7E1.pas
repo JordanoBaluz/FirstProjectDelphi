@@ -39,16 +39,19 @@ begin
   n3 := StrToInt(edtN3.Text);
 
   //calculo do delta
-  d := (n1*n1) - 4 * n2 * n3
+  d := (n1*n1) - 4 * n2 * n3;
 
   if (d > 0) then
   begin
-    x1 = (-n2 + Sqrt(d)/ (2 * n1));
-    x2 = (-n2 - Sqrt(d)/ (2 * n1));
-    lblResult.Caption := 'x1 = ' + x1 + ' x2 = ' + x2;
+    x1 :=  Round((-n2 + Sqrt(d)/ (2 * n1)));
+    x2 := Round((-n2 - Sqrt(d)/ (2 * n1)));
+    lblResult.Caption := 'x1 = ' + IntToStr(x1) + ' x2 = ' + IntToStr(x2);
   end
   else
+  begin
     lblResult.Caption := 'Não existe raizes reais';
+  end;
+
 end;
 
 end.

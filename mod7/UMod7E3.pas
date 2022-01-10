@@ -36,6 +36,8 @@ begin
   n1 := StrToInt(edtN1.Text);
   n2 := StrToInt(edtN2.Text);
 
+  //numero menor receber a media aritmetica
+  //numero maior recebe o produto triplo
   if n1 < n2 then
   begin
     n1 := Round((n1 + n2) / 2);

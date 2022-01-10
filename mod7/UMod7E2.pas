@@ -34,6 +34,7 @@ var
 begin
   a := StrToInt(edtN1.Text);
 
+  //um ano so e bissexto se for divisivel por 400 e 4
   if a mod 400 = 0 then
   begin
     if a mod 4 = 0 then

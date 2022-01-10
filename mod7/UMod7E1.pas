@@ -41,7 +41,8 @@ begin
   //calculo do delta
   d := (n1*n1) - 4 * n2 * n3;
 
-  if (d > 0) then
+  //so existe raiz se delta for maior que 0
+  if (d >= 0) then
   begin
     x1 :=  Round((-n2 + Sqrt(d)/ (2 * n1)));
     x2 := Round((-n2 - Sqrt(d)/ (2 * n1)));

@@ -24,6 +24,7 @@ type
     lbl1: TLabel;
     lblResult: TLabel;
     procedure btnCalcClick(Sender: TObject);
+    procedure pbxExClick(Sender: TObject);
   private
     function perimetro(a, b, c: Real): Integer;
     function distancia(xa, ya, xb, yb: Integer): Real;

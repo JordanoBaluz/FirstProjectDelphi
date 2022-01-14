@@ -18,8 +18,6 @@ object Form1: TForm1
     Top = 96
     Width = 185
     Height = 89
-    Lines.Strings = (
-      'mmoFront')
     TabOrder = 0
   end
   object btnClick: TButton
@@ -30,5 +28,9 @@ object Form1: TForm1
     Caption = 'Ler arquivo'
     TabOrder = 1
     OnClick = btnClickClick
+  end
+  object dlgOpen1: TOpenDialog
+    Left = 168
+    Top = 256
   end
 end

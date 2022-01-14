@@ -10,6 +10,7 @@ type
   TForm1 = class(TForm)
     mmoFront: TMemo;
     btnClick: TButton;
+    dlgOpen1: TOpenDialog;
     procedure btnClickClick(Sender: TObject);
   private
     { Private declarations }
@@ -19,10 +20,13 @@ type
 
 var
   Form1: TForm1;
+  okf1, okf2: Boolean;
+  stf1, stf2: string;
 
 implementation
 
 {$R *.dfm}
+
 
 procedure TForm1.btnClickClick(Sender: TObject);
 var

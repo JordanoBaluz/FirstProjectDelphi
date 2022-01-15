@@ -16,3 +16,8 @@ Para executar o formulário criado para cada exercísio, necessário alterar o m
 
 - Modulo 1 
 	 Abordagem sobre os conceitos do delphi, como utilizar o RAD, trabalhar com um VLC Forms Application para iniciar novos projetos, apresentação do form e componentes básicos como TLabel para apresentar um texto na tela, TEdit para armazenar textos digitados pelo usuário, TButton para criar um botão
+
+------------
+
+- Modulo 2
+	 Manipulação de evento utilizando botões, trabalhando com caixas de texto, manipulação das propriedades dos componentes como fontes, cores e habilitar e desabilitar o componente

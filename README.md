@@ -21,3 +21,10 @@ Para executar o formulário criado para cada exercísio, necessário alterar o m
 
 - Modulo 2
 	 Manipulação de evento utilizando botões, trabalhando com caixas de texto, manipulação das propriedades dos componentes como fontes, cores e habilitar e desabilitar o componente
+
+------------
+
+- Modulo 3
+	 Apresentação das variáveis utilizadas no delphi, como definir uma variável, como manipular, converter e realizar operações aritiméticas, por exemplo:
+	 `a:=StrToFloat(edtA.Text);`
+	 O código acima está atribuindo a váriavel a que é do tipo float, utilizando StrToFloat para converter uma string para float, dos dados inseridos na caixa de texto.

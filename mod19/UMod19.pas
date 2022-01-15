@@ -44,7 +44,6 @@ begin
 end;
 
 
-
 procedure TForm1.createGrid(n1, n2, n3, n4: Integer);
 begin
   sgdMy.RowCount := n2;

@@ -28,3 +28,12 @@ Para executar o formulário criado para cada exercísio, necessário alterar o m
 	 Apresentação das variáveis utilizadas no delphi, como definir uma variável, como manipular, converter e realizar operações aritiméticas, por exemplo:
 	 `a:=StrToFloat(edtA.Text);`
 	 O código acima está atribuindo a váriavel a que é do tipo float, utilizando StrToFloat para converter uma string para float, dos dados inseridos na caixa de texto.
+
+------------
+
+- Modulo 4
+	Trabalho com funções matématicas, como por exemplo:
+	`SQRT(x)` -> retorna a raiz quadrada de um número
+	`ROUND(X)` -> arredonda um valor real para inteiro
+	`TRUNC(X)` -> retorna a parte inteira, retirando a parte fracionaria de X
+	`INT(X)` -> retorna a parte inteira, porém como um número real

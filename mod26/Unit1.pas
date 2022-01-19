@@ -66,6 +66,8 @@ implementation
 
 {$R *.dfm}
 
+// links the corresponding resource file to the application. Similarly, a form (.dfm or nfm) file usually has the same name as its unit (.pas) file; including {$R *.nfm} in the .pas file links the corresponding form file to the application.
+
 procedure TForm1.btn1Click(Sender: TObject);
 begin
   with queryInsert do

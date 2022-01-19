@@ -65,6 +65,7 @@ object Form1: TForm1
       60CD6C543F8B16110D2200000003000000010000000000000000}
     ModalResult = 1
     TabOrder = 1
+    OnClick = btnAddClick
   end
   object dbgrdProduct: TDBGrid
     Left = 40
@@ -153,7 +154,7 @@ object Form1: TForm1
         'PO'#10' '
       'FROM produto as p join grupo_produto as gp '
       'on p.IDGRUPO = gp.ID;')
-    Left = 368
+    Left = 384
     Top = 16
     object strngfldProdutosean: TStringField
       AutoGenerateValue = arDefault

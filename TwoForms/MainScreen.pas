@@ -1,4 +1,4 @@
-unit Unit1;
+unit MainScreen;
 
 interface
 
@@ -9,7 +9,8 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQL,
   FireDAC.Phys.MySQLDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, Data.DB, Vcl.Grids, Vcl.DBGrids,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.Buttons;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.Buttons,
+  GroupScreen;
 
 type
   TForm1 = class(TForm)
@@ -28,6 +29,7 @@ type
     edtProduct: TEdit;
     edtGroup: TEdit;
     procedure FormShow(Sender: TObject);
+    procedure btnAddClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,10 +38,25 @@ type
 
 var
   Form1: TForm1;
+  fGroupScreen: TfGroupScreen;
+
 
 implementation
 
 {$R *.dfm}
+
+procedure TForm1.btnAddClick(Sender: TObject);
+begin
+//  Application.CreateForm(
+//    TfGroupScreen, fGroupScreen
+//  );
+//  fGroupScreen.ShowModal;
+
+  fGroupScreen := TfGroupScreen.Create(self);
+  fGroupScreen.dbgrdGroup.DataSource := ds1;
+  fGroupScreen.ShowModal;
+
+end;
 
 procedure TForm1.FormShow(Sender: TObject);
 begin

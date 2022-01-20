@@ -73,6 +73,7 @@ object Form1: TForm1
     Width = 689
     Height = 185
     DataSource = ds1
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ReadOnly = True
     TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
@@ -109,21 +110,21 @@ object Form1: TForm1
         Visible = True
       end>
   end
-  object edtProduct: TEdit
+  object edtGroup: TEdit
     Left = 184
     Top = 170
     Width = 249
     Height = 21
     TabOrder = 3
-    Text = 'edtProduct'
+    Text = 'edtGroup'
   end
-  object edtGroup: TEdit
+  object edtIdGroup: TEdit
     Left = 40
     Top = 170
     Width = 121
     Height = 21
     TabOrder = 4
-    Text = 'edtGroup'
+    Text = 'edtIdGroup'
   end
   object conDbDisk: TFDConnection
     Params.Strings = (

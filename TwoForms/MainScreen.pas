@@ -51,7 +51,7 @@ var
 
 implementation
    {$R *.dfm}
-   //chamada do outro form para não causar erro de chamada circular
+   //chamada do outro form para nÃ£o causar erro de chamada circular
 uses
   GroupScreen;
 
@@ -73,7 +73,7 @@ begin
 //  fGroupScreen.ShowModal;
   try
   begin
-    //primeiro precisa criar o form, só depois ativar ele
+    //primeiro precisa criar o form, sÃ³ depois ativar ele
     fGroupScreen := TfGroupScreen.Create(self);
     fGroupScreen.queryGroup.Active := True;
     // passagem do datasource para exibir os dados coletados pelo ds do form2
@@ -82,7 +82,7 @@ begin
   end;
   finally
   begin
-    //joga as informações do id e grupo selecionado no edit
+    //joga as informaÃ§Ãµes do id e grupo selecionado no edit
     edtIdGroup.Text := fGroupScreen.fdtncfldGroupID.AsString;
     edtGroup.Text := fGroupScreen.strngfldGroupGRUPO.AsString;
     buscaPorGrupo;

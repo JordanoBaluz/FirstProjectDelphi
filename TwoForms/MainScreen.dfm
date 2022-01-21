@@ -20,7 +20,7 @@ object Form1: TForm1
     Width = 459
     Height = 21
     TabOrder = 0
-    Text = 'edtSearch'
+    TextHint = 'Digite um produto para buscar'
     OnKeyPress = edtSearchKeyPress
   end
   object btnAdd: TBitBtn
@@ -28,7 +28,6 @@ object Form1: TForm1
     Top = 168
     Width = 33
     Height = 25
-    Default = True
     Glyph.Data = {
       36040000424D3604000000000000360000002800000010000000100000000100
       2000000000000004000000000000000000000000000000000000000000000000
@@ -65,7 +64,7 @@ object Form1: TForm1
       000000000001000000022019122C6C543E89A47E5FCCC59770F1C19570EEA47E
       60CD6C543F8B16110D2200000003000000010000000000000000}
     ModalResult = 1
-    TabOrder = 5
+    TabOrder = 2
     OnClick = btnAddClick
   end
   object dbgrdProduct: TDBGrid
@@ -116,7 +115,7 @@ object Form1: TForm1
     Top = 170
     Width = 169
     Height = 21
-    TabOrder = 4
+    TabOrder = 5
     TextHint = 'Grupo'
   end
   object edtIdGroup: TEdit
@@ -124,7 +123,7 @@ object Form1: TForm1
     Top = 170
     Width = 121
     Height = 21
-    TabOrder = 3
+    TabOrder = 4
     TextHint = 'IdGrupo'
   end
   object btnGeralSearch: TBitBtn
@@ -134,7 +133,7 @@ object Form1: TForm1
     Height = 25
     Kind = bkAll
     NumGlyphs = 2
-    TabOrder = 2
+    TabOrder = 3
     OnClick = btnGeralSearchClick
   end
   object srchbxProduto: TSearchBox
@@ -143,7 +142,7 @@ object Form1: TForm1
     Width = 459
     Height = 21
     TabOrder = 1
-    Text = 'srchbxProduto'
+    TextHint = 'Digite um produto para buscar'
     OnInvokeSearch = srchbxProdutoInvokeSearch
   end
   object conDbDisk: TFDConnection

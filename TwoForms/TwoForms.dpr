@@ -2,7 +2,8 @@ program TwoForms;
 
 uses
   Vcl.Forms,
-  Unit1 in 'Unit1.pas' {Form1};
+  MainScreen in 'MainScreen.pas' {Form1},
+  GroupScreen in 'GroupScreen.pas' {fGroupScreen};
 
 {$R *.res}
 
@@ -10,5 +11,6 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfGroupScreen, fGroupScreen);
   Application.Run;
 end.

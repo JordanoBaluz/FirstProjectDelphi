@@ -9,7 +9,8 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQL,
   FireDAC.Phys.MySQLDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, Data.DB, Vcl.Grids, Vcl.DBGrids,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.Buttons;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.WinXCtrls;
   //GroupScreen;
 
 type
@@ -28,10 +29,16 @@ type
     strngfldProdutosGRUPO: TStringField;
     edtGroup: TEdit;
     edtIdGroup: TEdit;
+    btnGeralSearch: TBitBtn;
+    srchbxProduto: TSearchBox;
     procedure FormShow(Sender: TObject);
     procedure btnAddClick(Sender: TObject);
+    procedure btnGeralSearchClick(Sender: TObject);
+    procedure srchbxProdutoInvokeSearch(Sender: TObject);
+    procedure edtSearchKeyPress(Sender: TObject; var Key: Char);
   private
     procedure buscaPorGrupo;
+    procedure buscaProduto(ProductSearch: string);
     { Private declarations }
   public
     { Public declarations }
@@ -44,7 +51,7 @@ var
 
 implementation
    {$R *.dfm}
-   //chamada do outro form para não causar erro de chamada circular
+   //chamada do outro form para nÃ£o causar erro de chamada circular
 uses
   GroupScreen;
 
@@ -54,7 +61,10 @@ var
 const
   busca_grupo: string = 
     'SELECT p.ean, p.DESC_CURTA, p.VALOR_VENDA, p.ESTOQ_ATUAL, gp.GRUPO FROM produto as p join grupo_produto as gp on p.IDGRUPO = gp.ID where gp.id =';
-
+  busca_geral: string =
+    'SELECT p.ean, p.DESC_CURTA, p.VALOR_VENDA, p.ESTOQ_ATUAL, gp.GRUPO FROM produto as p join grupo_produto as gp on p.IDGRUPO = gp.ID';
+  busca_produto: string =
+    'SELECT p.ean, p.DESC_CURTA, p.VALOR_VENDA, p.ESTOQ_ATUAL, gp.GRUPO FROM produto as p join grupo_produto as gp on p.IDGRUPO = gp.ID where p.DESC_CURTA like ';
 procedure TForm1.btnAddClick(Sender: TObject);
 begin
 //  Application.CreateForm(
@@ -63,7 +73,7 @@ begin
 //  fGroupScreen.ShowModal;
   try
   begin
-    //primeiro precisa criar o form, só depois ativar ele
+    //primeiro precisa criar o form, sÃ³ depois ativar ele
     fGroupScreen := TfGroupScreen.Create(self);
     fGroupScreen.queryGroup.Active := True;
     // passagem do datasource para exibir os dados coletados pelo ds do form2
@@ -72,15 +82,12 @@ begin
   end;
   finally
   begin
-    //joga as informações do id e grupo selecionado no edit
+    //joga as informaÃ§Ãµes do id e grupo selecionado no edit
     edtIdGroup.Text := fGroupScreen.fdtncfldGroupID.AsString;
     edtGroup.Text := fGroupScreen.strngfldGroupGRUPO.AsString;
     buscaPorGrupo;
   end;  
   end;
-  //exibir o grupo selecionado
-  
-
 end;
 
 //quando selecionado o grupo altera o sql para buscar produtos com o grupo selecionado
@@ -91,9 +98,35 @@ begin
   queryProdutos.Open;
 end;
 
+procedure TForm1.btnGeralSearchClick(Sender: TObject);
+begin
+  queryProdutos.SQL.Clear;
+  queryProdutos.SQL.Text := busca_geral;
+  queryProdutos.Open;
+end;
+
 procedure TForm1.FormShow(Sender: TObject);
 begin
   queryProdutos.Active := True;
+  edtSearch.SetFocus;
+end;
+
+procedure TForm1.srchbxProdutoInvokeSearch(Sender: TObject);
+begin
+  buscaProduto(srchbxProduto.Text);
+end;
+
+procedure TForm1.buscaProduto(ProductSearch: string);
+begin
+  queryProdutos.SQL.Clear;
+  queryProdutos.SQL.Text := busca_produto + QuotedStr('%'+ProductSearch+'%');
+  queryProdutos.Open;
+end;
+
+procedure TForm1.edtSearchKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #13 then
+    buscaProduto(edtSearch.Text);
 end;
 
 end.

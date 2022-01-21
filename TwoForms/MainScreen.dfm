@@ -16,14 +16,15 @@ object Form1: TForm1
   TextHeight = 13
   object edtSearch: TEdit
     Left = 40
-    Top = 104
-    Width = 449
+    Top = 85
+    Width = 459
     Height = 21
     TabOrder = 0
     Text = 'edtSearch'
+    OnKeyPress = edtSearchKeyPress
   end
   object btnAdd: TBitBtn
-    Left = 456
+    Left = 375
     Top = 168
     Width = 33
     Height = 25
@@ -64,7 +65,7 @@ object Form1: TForm1
       000000000001000000022019122C6C543E89A47E5FCCC59770F1C19570EEA47E
       60CD6C543F8B16110D2200000003000000010000000000000000}
     ModalResult = 1
-    TabOrder = 1
+    TabOrder = 5
     OnClick = btnAddClick
   end
   object dbgrdProduct: TDBGrid
@@ -75,7 +76,7 @@ object Form1: TForm1
     DataSource = ds1
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ReadOnly = True
-    TabOrder = 2
+    TabOrder = 6
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -113,18 +114,37 @@ object Form1: TForm1
   object edtGroup: TEdit
     Left = 184
     Top = 170
-    Width = 249
+    Width = 169
     Height = 21
-    TabOrder = 3
-    Text = 'edtGroup'
+    TabOrder = 4
+    TextHint = 'Grupo'
   end
   object edtIdGroup: TEdit
     Left = 40
     Top = 170
     Width = 121
     Height = 21
-    TabOrder = 4
-    Text = 'edtIdGroup'
+    TabOrder = 3
+    TextHint = 'IdGrupo'
+  end
+  object btnGeralSearch: TBitBtn
+    Left = 424
+    Top = 168
+    Width = 75
+    Height = 25
+    Kind = bkAll
+    NumGlyphs = 2
+    TabOrder = 2
+    OnClick = btnGeralSearchClick
+  end
+  object srchbxProduto: TSearchBox
+    Left = 40
+    Top = 128
+    Width = 459
+    Height = 21
+    TabOrder = 1
+    Text = 'srchbxProduto'
+    OnInvokeSearch = srchbxProdutoInvokeSearch
   end
   object conDbDisk: TFDConnection
     Params.Strings = (
